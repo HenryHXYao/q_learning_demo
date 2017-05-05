@@ -1,6 +1,6 @@
 __author__ = 'philippe'
-from Tkinter import *
-master = Tk()
+import tkinter as Tk 
+master = Tk.Tk()
 
 triangle_size = 0.1
 cell_score_min = -0.2
@@ -9,7 +9,7 @@ Width = 100
 (x, y) = (5, 5)
 actions = ["up", "down", "left", "right"]
 
-board = Canvas(master, width=x*Width, height=y*Width)
+board = Tk.Canvas(master, width=x*Width, height=y*Width)
 player = (0, y-1)
 score = 1
 restart = False
@@ -89,7 +89,7 @@ def try_move(dx, dy):
             score -= walk_reward
             score += w
             if score > 0:
-                print "Success! score: ", score
+                print "Success! score:",  score
             else:
                 print "Fail! score: ", score
             restart = True
